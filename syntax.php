@@ -55,15 +55,16 @@
                     if($match == '``') { 
                               $renderer->doc .= '<code>';                                
                        }
-                      else { 
-                         // $renderer->doc .= '<code style = "background-color:white; border: none; box-shadow:none;">'; 
+                      else {                         
                          $renderer->doc .= '<code class="skipentity">';                         
                       }   
                       break;
 					
 					case DOKU_LEXER_UNMATCHED :
-                    $renderer->doc .= $renderer->_xmlEntities($match); 
-					break;
+                        $match = $renderer->_xmlEntities($match); 
+                        $match = str_replace("\n","<br />", $match);
+                        $renderer->doc .= $match;                 
+                        break;
 					case DOKU_LEXER_EXIT :
 				    $renderer->doc .= "</code>";
 				    break;
