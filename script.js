@@ -1,3 +1,4 @@
+/*
 if (typeof window.toolbar !== 'undefined') {
     toolbar[toolbar.length] = {
         type: "format",
@@ -9,3 +10,4 @@ if (typeof window.toolbar !== 'undefined') {
         close: "``"
     };
 }
+*/
